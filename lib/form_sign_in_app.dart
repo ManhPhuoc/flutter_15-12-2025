@@ -93,7 +93,7 @@ class _FormSignInAppState extends State<FormSignInApp> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.blue.shade900,
         centerTitle: true,
       ),
       body: myBody(),
@@ -162,7 +162,7 @@ class _FormSignInAppState extends State<FormSignInApp> {
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.amber,
+                backgroundColor: Colors.blue.shade900,
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 30,

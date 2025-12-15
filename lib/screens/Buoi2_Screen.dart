@@ -11,7 +11,7 @@ class Buoi2Screen extends StatelessWidget {
           "IMAGE",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue.shade900,
         foregroundColor: Colors.white,
         centerTitle: true,
       ),

@@ -9,6 +9,7 @@ import 'screens/Buoi7_Screen.dart';
 import 'screens/Buoi8_Screen.dart';
 import 'screens/Buoi9_Screen.dart';
 import 'screens/buoi10_screen.dart';
+import 'screens/Buoi11_Screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -113,14 +114,29 @@ class _HomePageState extends State<HomePage> {
             ),
 
             ListTile(
-              leading: const Icon(Icons.api),
+              leading: Container(
+                width: 28,
+                height: 28,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade700,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: const Text(
+                  "7",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               title: const Text("Buổi 7"),
-              subtitle: const Text("Đăng nhập & API"),
+              // subtitle: const Text("Đăng nhập & API"),
               onTap: () {
                 setState(() {
                   _currentScreen = const Buoi7Screen();
                 });
-                Navigator.pop(context);
+                Navigator.pop(context); // đóng drawer
               },
             ),
 
@@ -142,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               title: const Text("Buổi 8"),
-              subtitle: const Text("Call API Product"),
+              // subtitle: const Text("Call API Product"),
               onTap: () {
                 Navigator.push(
                   context,
@@ -169,7 +185,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               title: const Text("Buổi 9"),
-              subtitle: const Text("Shoes House – GridView API"),
+              // subtitle: const Text("Shoes House – GridView API"),
               onTap: () {
                 setState(() {
                   _currentScreen = const Buoi9Screen();
@@ -196,7 +212,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               title: const Text("Buổi 10"),
-              subtitle: const Text("News API"),
+              // subtitle: const Text("News API"),
               onTap: () {
                 setState(() {
                   _currentScreen = const Buoi10Screen();
@@ -205,7 +221,31 @@ class _HomePageState extends State<HomePage> {
               },
             ),
 
-            // (sau này thêm Buổi 2, API...)
+            ListTile(
+              leading: Container(
+                width: 28,
+                height: 28,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade700,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: const Text(
+                  "11",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              title: const Text("Buổi 11"),
+              onTap: () {
+                setState(() {
+                  _currentScreen = const Buoi11Screen();
+                });
+                Navigator.pop(context); // đóng drawer
+              },
+            ),
           ],
         ),
       ),

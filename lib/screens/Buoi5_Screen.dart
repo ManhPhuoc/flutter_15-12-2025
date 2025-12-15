@@ -34,7 +34,7 @@ class Buoi5Screen extends StatelessWidget {
           "WELCOME UI",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blue.shade900,
         elevation: 0,
         foregroundColor: Colors.white,
         centerTitle: true,

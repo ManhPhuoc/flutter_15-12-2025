@@ -23,7 +23,7 @@ class _Buoi6ScreenState extends State<Buoi6Screen> {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blue.shade900,
         foregroundColor: Colors.white,
       ),
       body: Column(
@@ -98,13 +98,19 @@ class CountTimeDemo extends StatefulWidget {
 }
 
 class _CountTimeDemoState extends State<CountTimeDemo> {
-  int time = 10;
+  int time = 0;
   Timer? timer;
+  final TextEditingController _controller = TextEditingController();
 
   void _start() {
+    if (time <= 0) return;
+
     timer ??= Timer.periodic(const Duration(seconds: 1), (_) {
       if (time > 0) {
         setState(() => time--);
+      } else {
+        timer?.cancel();
+        timer = null;
       }
     });
   }
@@ -112,7 +118,10 @@ class _CountTimeDemoState extends State<CountTimeDemo> {
   void _reset() {
     timer?.cancel();
     timer = null;
-    setState(() => time = 10);
+    setState(() {
+      time = 0;
+      _controller.clear();
+    });
   }
 
   @override
@@ -121,10 +130,61 @@ class _CountTimeDemoState extends State<CountTimeDemo> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          /// LABEL
+          const Text(
+            "Nhập số giây cần đếm",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+
+          const SizedBox(height: 10),
+
+          /// INPUT (HẸP)
+          SizedBox(
+            width: 200,
+            child: TextField(
+              controller: _controller,
+              keyboardType: TextInputType.number,
+              textAlign: TextAlign.center,
+              decoration: const InputDecoration(border: OutlineInputBorder()),
+              onChanged: (value) {
+                setState(() {
+                  time = int.tryParse(value) ?? 0;
+                });
+              },
+            ),
+          ),
+
+          const SizedBox(height: 20),
+
+          /// TIME
           Text(time.toString(), style: const TextStyle(fontSize: 50)),
-          ElevatedButton(onPressed: _start, child: const Text("Start")),
-          SizedBox(height: 10),
-          ElevatedButton(onPressed: _reset, child: const Text("Reset")),
+
+          const SizedBox(height: 20),
+
+          /// BUTTONS SONG SONG
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: _start,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey,
+                  foregroundColor: Colors.white,
+                ),
+                child: const Text("Bắt đầu"),
+              ),
+              const SizedBox(width: 16),
+              ElevatedButton(
+                onPressed: _reset,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black87,
+                  foregroundColor: Colors.white,
+                ),
+                child: const Text("Đặt lại"),
+              ),
+            ],
+          ),
         ],
       ),
     );

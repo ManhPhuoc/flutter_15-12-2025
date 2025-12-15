@@ -27,7 +27,7 @@ class _ListOfArticleState extends State<ListOfArticle> {
           "TIN TỨC NỔI BẬT",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blue.shade900,
         centerTitle: true,
         foregroundColor: Colors.white,
       ),

@@ -12,7 +12,7 @@ class Buoi3Screen extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.blue.shade900,
       ),
       body: SafeArea(child: myBody()),
     );
@@ -20,6 +20,7 @@ class Buoi3Screen extends StatelessWidget {
 
   Widget myBody() {
     return ListView(
+      padding: const EdgeInsets.only(top: 10),
       scrollDirection: Axis.vertical,
       children: List.generate(10, (index) => itemList()),
     );
@@ -27,12 +28,13 @@ class Buoi3Screen extends StatelessWidget {
 
   Widget itemList() {
     return Container(
+      padding: const EdgeInsets.all(12),
       margin: const EdgeInsets.fromLTRB(20, 0, 20, 10),
       height: 100,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black),
         borderRadius: BorderRadius.circular(10),
-        color: Colors.amberAccent,
+        color: Colors.blueGrey,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,8 +47,15 @@ class Buoi3Screen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Lập trình di động"),
-                  Text("Instructor : Dung Nguyen"),
+                  Text(
+                    "Lập trình di động",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "Instructor: Dung Nguyen",
+                    style: TextStyle(fontSize: 13, color: Colors.black54),
+                  ),
                 ],
               ),
               Text("58 Students"),

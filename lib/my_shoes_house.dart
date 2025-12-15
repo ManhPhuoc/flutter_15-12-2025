@@ -39,7 +39,7 @@ class _MyShoesHouseState extends State<MyShoesHouse> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blue.shade900,
         elevation: 4,
       ),
       body: Container(

@@ -27,7 +27,7 @@ class _MyProductState extends State<MyProduct> {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blue.shade900,
         foregroundColor: Colors.white,
       ),
       body: FutureBuilder<List<Product>>(

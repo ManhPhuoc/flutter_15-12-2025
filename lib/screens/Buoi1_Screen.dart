@@ -11,7 +11,7 @@ class Buoi1Screen extends StatelessWidget {
           "ROW and COLUM",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.blue.shade900,
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
